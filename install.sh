@@ -1,6 +1,14 @@
 # 安装必要程序
-sudo pacman -S --noconfirm zen-browser-bin fcitx5-im fcitx5-rime waybar kitty wofi swappy yazi wlogout swaync blueman wl-clipboard swww clapper
+sudo pacman -S --noconfirm zen-browser-bin fcitx5-im fcitx5-rime waybar kitty wofi swappy yazi wlogout swaync blueman wl-clipboard swww clapper cliphist
 paru -S --noconfirm ttf-iosevka-nerd zathura visual-studio-code-bin btop fastfetch cava
+
+BACKUP_DIR="~/.config/backup_$(date)"
+
+rm -rf $ BACKUP_DIR
+mkdir -p $ BACKUP_DIR
+
+
+
 
 # 设置sddm自动登录niri
 
