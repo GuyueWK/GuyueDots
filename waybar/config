@@ -148,6 +148,8 @@
             "custom/openbracket",
             "cpu",
             "custom/split",
+            "temperature",
+            "custom/split",
             "memory",
             "custom/closebracket"
         ]
@@ -163,6 +165,14 @@
         "tooltip": false,
         "interval": 2,
         "on-click": "kitty -e btop"
+    },
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C",
+        "format-critical": "{temperatureC}°C ",
+        "tooltip": false,
+        "interval": 2
     },
 
     "group/brightvol": {
@@ -209,7 +219,7 @@
             "custom/bluetooth",
             "wireplumber",
             "custom/clipboard",
-            //"battery",
+            "battery",
             "custom/swaync",
             "custom/closebracket"
         ]
@@ -225,8 +235,10 @@
     },
 
     "clock": {
-        "format": "{:%I:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y-%m-%d %H:%M:%S}",
+        "tooltip-format": "<big>{:%Y年%B}</big>\n<tt><small>{calendar}</small></tt>",
+        "locale": "zh_CN.UTF-8",
         "onclick" : "kalender"
     },
     "custom/clipboard": {
@@ -280,6 +292,15 @@
         "modules": [
             "custom/openbracket",
             "clock",
+            "custom/closebracket"
+        ]
+    },
+
+    "group/cava": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/openbracket",
+            "custom/cava",
             "custom/closebracket"
         ]
     },
