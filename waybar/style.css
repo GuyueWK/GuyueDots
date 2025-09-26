@@ -127,17 +127,24 @@ button {
 
 /* media player */
 #mpris {
-    /* margin: 0 0 0 5px;
-    padding: 0 9px; */
+    margin: 1px 0 0 5px;
+    padding: 0 2px;
     font-size: 15px;
     background-color: @background;
     color: @text;
 }
 
-#mpris.playing {
+/* #mpris.playing {
     background-color: @color3;
     border-radius: 2px;
     color: @background;
+} */
+
+#mpris.paused {
+    background: rgba(208, 139, 87, 0.8);
+    color: @background;
+    border-radius: 3px;
+    transition: all 0.3s ease;
 }
 
 /* center module  */
@@ -150,7 +157,7 @@ button {
 /* module general styles */
 #clock,
 #battery,
-#cpu,
+/* #cpu, */
 #memory,
 #custom-clipboard,
 #custom-bluetooth,
@@ -158,10 +165,14 @@ button {
     padding: 0 10px;
 }
 
+#cpu {
+    margin: 0 10px 0 0;
+}
+
 #clock:hover,
 #battery:hover,
 #custom-cpu:hover,
-#custom-clipboard:hover,
+#temperature:hover,
 #custom-bluetooth:hover,
 #network:hover,
 #idle_inhibitor:hover,
@@ -231,7 +242,7 @@ button {
 #custom-cava.cava-active {
     background-color: @color1;
     color: @background;
-    animation: pulse 2s ease-in-out infinite alternate;
+    animation: rainbow-pulse 5s ease-in-out infinite alternate;
 }
 
 #custom-cava.hidden {
@@ -248,5 +259,32 @@ button {
 
     100% {
         background-color: @color2;
+    }
+}
+
+@keyframes rainbow-pulse {
+    0% {
+        background-color: @color1;
+        /* #7699A3 蓝色 */
+    }
+
+    25% {
+        background-color: @color2;
+        /* #8D7AAE 紫色 */
+    }
+
+    50% {
+        background-color: @color3;
+        /* #78997A 绿色 */
+    }
+
+    75% {
+        background-color: @focused;
+        /* #D08B57 橙色 */
+    }
+
+    100% {
+        background-color: @color1;
+        /* 回到蓝色 */
     }
 }

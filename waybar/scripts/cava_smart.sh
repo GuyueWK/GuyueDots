@@ -27,7 +27,7 @@ check_music_playing() {
 # If no music is playing, output empty JSON
 if ! check_music_playing; then
     echo '{"text": "", "class": "hidden"}'
-    exit 0
+    # exit 0
 fi
 
 # Configure cava
@@ -43,7 +43,7 @@ done
 config_file="/tmp/waybar_cava_config"
 cat > $config_file << EOF
 [general]
-bars = 10
+bars = 30
 framerate = 20
 
 [output]
@@ -69,9 +69,9 @@ EOF
 cava -p $config_file 2>/dev/null | while read -r line; do
     if check_music_playing; then
         visualization=$(echo $line | sed $dict)
-        echo "{\"text\": \"$visualization\", \"class\": \"cava-active\"}"
+        echo "{\"text\": \"[ $visualization ]\", \"class\": \"cava-active\"}"
     else
         echo '{"text": "", "class": "hidden"}'
-        break
+        # break
     fi
 done

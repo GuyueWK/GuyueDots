@@ -76,12 +76,12 @@
             "active-only": false,
             "format": "{icon}",
             "format-icons": {
-                "1": "I",
-                "2": "II",
-                "3": "III",
-                "4": "IV",
-                "5": "V",
-                "6": "VI",
+                "1": "1",
+                "2": "2",
+                "3": "3",
+                "4": "4",
+                "5": "5",
+                "6": "6",
                 "default": "•"
             }
         },
@@ -93,12 +93,12 @@
             "active-only": false,
             "format": "{icon}",
             "format-icons": {
-                "1": "I",
-                "2": "II",
-                "3": "III",
-                "4": "IV",
-                "5": "V",
-                "6": "VI",
+                "1": "1",
+                "2": "2",
+                "3": "3",
+                "4": "4",
+                "5": "5",
+                "6": "6",
                 "default": "•"
             }
         },
@@ -147,7 +147,7 @@
                 "custom/split",
                 "temperature#cpu",
                 "custom/split",
-                "custom/gpu-temp",
+                "custom/gputemp",
                 "custom/closebracket"
             ]
         },
@@ -171,7 +171,7 @@
             "tooltip": false,
             "interval": 2
         },
-        "custom/gpu-temp": {
+        "custom/gputemp": {
             "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
             "format": " 󰢮 {}°C",
             "interval": 3,
@@ -314,8 +314,7 @@
             "orientation": "horizontal",
             "modules": [
                 "custom/cava"
-            ],
-            "exec-if": "command -v cava >/dev/null 2>&1"
+            ]
         },
         // "custom/cava": {
         //     "format": "[{}]",
@@ -326,12 +325,12 @@
         //     "max-length": 30
         // },
         "custom/cava": {
-            "format": "[{}]",
+            "format": "{}",
             "exec": "~/.config/waybar/scripts/cava_smart.sh",
             "return-type": "json",
             // "interval": 2,
-            "tooltip": false,
-            "max-length": 25
+            // "tooltip": false,
+            // "max-length": 25
         },
         "tray": {
             "icon-size": 14,
