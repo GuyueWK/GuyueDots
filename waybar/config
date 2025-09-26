@@ -6,7 +6,7 @@
         "group/Utilities",
         "group/workspaces",
         "mpris",
-        "group/cava"
+        "custom/cava"
     ],
     "modules-center": [
         "group/windows"
@@ -307,7 +307,12 @@
 
     "custom/cava": {
     	"format": "{}",
-    	"exec": "~/.config/waybar/scripts/cava.sh"
+    	"exec": "~/.config/waybar/scripts/cava_smart.sh",
+    	"return-type": "json",
+    	"interval": 2,
+    	"exec-if": "command -v cava >/dev/null 2>&1",
+    	"tooltip": false,
+    	"max-length": 25
     },
 
     "tray": {
