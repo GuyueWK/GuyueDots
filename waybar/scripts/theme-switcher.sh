@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Theme Switcher Script
-WALLPAPER_DIR="$HOME/github/GuyueDots/assets"
+WALLPAPER_DIR="$HOME/.config/dot-pic/wallpaper"
 CURRENT_WALLPAPER_FILE="$HOME/.cache/current_wallpaper"
 
 # Collect wallpapers
