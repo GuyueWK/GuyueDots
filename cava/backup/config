@@ -1,5 +1,4 @@
-## Configuration file for CAVA.
-# Remove the ; to change parameters.
+## Configuration file for CAVA. Default values are commented out. Use either ';' or '#' for commenting.
 
 
 [general]
@@ -20,7 +19,7 @@
 # 200 means double height. Accepts only non-negative values.
 ; sensitivity = 100
 
-# The number of bars (0-512). 0 sets it to auto (fill up console).
+# The number of bars (0-200). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
 ; bars = 0
 ; bar_width = 2
@@ -31,10 +30,6 @@
 # For SDL width and space between bars is in pixels, defaults are:
 ; bar_width = 20
 ; bar_spacing = 5
-
-# sdl_glsl have these default values, they are only used to calulate max number of bars.
-; bar_width = 1
-; bar_spacing = 0
 
 
 # Lower and higher cutoff frequencies for lowest and highest bars
@@ -53,25 +48,18 @@
 [input]
 
 # Audio capturing method. Possible methods are: 'pulse', 'alsa', 'fifo', 'sndio' or 'shmem'
-# Defaults to 'pulse', 'pipewire', 'alsa' or 'fifo', in that order, dependent on what support cava was built with.
-# On windows this is automatic and no input settings are needed.
+# Defaults to 'pulse', 'alsa' or 'fifo', in that order, dependent on what support cava was built with.
 #
 # All input methods uses the same config variable 'source'
 # to define where it should get the audio.
 #
-# For pulseaudio and pipewire 'source' will be the source. Default: 'auto', which uses the monitor source of the default sink
+# For pulseaudio 'source' will be the source. Default: 'auto', which uses the monitor source of the default sink
 # (all pulseaudio sinks(outputs) have 'monitor' sources(inputs) associated with them).
-#
-# For piepwire 'source' will be the object name or object.serial of the device to capture from.
-# Both input and output devices are supported.
 #
 # For alsa 'source' will be the capture device.
 # For fifo 'source' will be the path to fifo-file.
 # For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where 'AA:BB:CC:DD:EE:FF' will be squeezelite's MAC address
 ; method = pulse
-; source = auto
-
-; method = pipewire
 ; source = auto
 
 ; method = alsa
@@ -91,8 +79,7 @@
 
 [output]
 
-# Output method. Can be 'ncurses', 'noncurses', 'raw', 'noritake', 'sdl'
-# or 'sdl_glsl'.
+# Output method. Can be 'ncurses', 'noncurses', 'raw', 'noritake' or 'sdl'.
 # 'noncurses' uses a custom framebuffer technique and prints only changes
 # from frame to frame in the terminal. 'ncurses' is default if supported.
 #
@@ -104,9 +91,7 @@
 #  in graphic mode. It only support the 3000 series graphical VFDs for now.
 #
 # 'sdl' uses the Simple DirectMedia Layer to render in a graphical context.
-# 'sdl_glsl' uses SDL to create an OpenGL context. Write your own shaders or
-# use one of the predefined ones.
-method = ncurses
+; method = ncurses
 
 # Orientation of the visualization. Can be 'bottom', 'top', 'left' or 'right'.
 # Default is 'bottom'. Other orientations are only supported on sdl and ncruses
@@ -152,16 +137,9 @@ method = ncurses
 ; xaxis = none
 
 # enable alacritty synchronized updates. 1 = on, 0 = off
-# removes flickering in alacritty terminal emulator.
+# removes flickering in alacritty terminal emeulator.
 # defaults to off since the behaviour in other terminal emulators is unknown
-alacritty_sync = 1
-
-# Shaders for sdl_glsl, located in $HOME/.config/cava/shaders
-; vertex_shader = pass_through.vert
-; fragment_shader = bar_spectrum.frag
-
-; for glsl output mode, keep rendering even if no audio
-; continuous_rendering = 0
+; alacritty_sync = 0
 
 [color]
 
@@ -169,27 +147,27 @@ alacritty_sync = 1
 # Or defined by hex code '#xxxxxx' (hex code must be within ''). User defined colors requires
 # a terminal that can change color definitions such as Gnome-terminal or rxvt.
 # default is to keep current terminal color
-; background = default
-; foreground = default
+background = '#2C2A24'
+foreground = '#DDD5C4'
 
-# SDL and sdl_glsl only support hex code colors, these are the default:
+# SDL only support hex code colors, these are the default:
 ; background = '#111111'
-; foreground = '#33ffff'
+; foreground = '#33cccc'
 
 
 # Gradient mode, only hex defined colors are supported,
 # background must also be defined in hex or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
 gradient = 1
-gradient_count = 4
-gradient_color_1 = '#98971a'
-gradient_color_2 = '#b8bb26'
-gradient_color_3 = '#d79921'
-gradient_color_4 = '#fb4934'
-; gradient_color_5 = '#cca633'
-; gradient_color_6 = '#cc8033'
-; gradient_color_7 = '#cc5933'
-; gradient_color_8 = '#cc3333'
+gradient_count = 0
+gradient_color_1 = '#7699A3'
+gradient_color_2 = '#8D7AAE'
+gradient_color_3 = '#78997A'
+gradient_color_4 = '#D08B57'
+gradient_color_5 = '#BFAA80'
+gradient_color_6 = '#A0907A'
+gradient_color_7 = '#B05A5A'
+gradient_color_8 = '#DDD5C4'
 
 
 
@@ -198,7 +176,7 @@ gradient_color_4 = '#fb4934'
 # Percentage value for integral smoothing. Takes values from 0 - 100.
 # Higher values means smoother, but less precise. 0 to disable.
 # DEPRECATED as of 0.8.0, use noise_reduction instead
-; integral = 77
+; integral = 50
 
 # Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable.
 ; monstercat = 0
@@ -214,16 +192,16 @@ gradient_color_4 = '#fb4934'
 # DEPRECATED as of 0.8.0
 ; ignore = 0
 
-# Noise reduction, int 0 - 100. default 77
+# Noise reduction, float 0 - 1. default 0.77
 # the raw visualization is very noisy, this factor adjusts the integral and gravity filters to keep the signal smooth
-# 100 will be very slow and smooth, 0 will be fast but noisy.
-; noise_reduction = 77
+# 1 will be very slow and smooth, 0 will be fast but noisy.
+; noise_reduction = 0.77
 
 
 [eq]
 
 # This one is tricky. You can have as much keys as you want.
-# Remember to uncomment more than one key! More keys = more precision.
+# Remember to uncomment more then one key! More keys = more precision.
 # Look at readme.md on github for further explanations and examples.
 ; 1 = 1 # bass
 ; 2 = 1
