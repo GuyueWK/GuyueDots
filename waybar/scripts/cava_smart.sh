@@ -66,7 +66,7 @@ gradient_color_3 = '#74c7ec'
 EOF
 
 # Run cava with timeout and check music status periodically
-timeout 2 cava -p $config_file 2>/dev/null | while read -r line; do
+cava -p $config_file 2>/dev/null | while read -r line; do
     if check_music_playing; then
         visualization=$(echo $line | sed $dict)
         echo "{\"text\": \"$visualization\", \"class\": \"cava-active\"}"

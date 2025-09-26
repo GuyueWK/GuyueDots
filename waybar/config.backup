@@ -3,8 +3,21 @@
         "height": 40,
         "spacing": 5,
         "modules-left": [
-            "group/Utilities",
-            "group/workspaces",
+            "group/Utiliti        "mpris": {
+            "format": "[   {status_icon} | {dynamic} ]",
+            "interval": 1,
+            "dynamic-len": 40,
+            "status-icons": {
+                "playing": "▶",
+                "paused": "⏸",
+                "stopped": ""
+            },
+            "dynamic-order": [
+                "title",
+                "artist",
+                "album"
+            ]
+        },    "group/workspaces",
             "mpris",
             "group/cava"
         ],
@@ -103,7 +116,7 @@
             }
         },
         "mpris": {
-            "format": "[ {status_icon} | {dynamic} ]",
+            "format": "[   {status_icon} | {dynamic} ]",
             "interval": 1,
             "dynamic-len": 40,
             "status-icons": {
@@ -112,9 +125,7 @@
                 "stopped": ""
             },
             "dynamic-order": [
-                "title",
-                "artist",
-                "album"
+                "artist"
             ]
         },
         "group/windows": {
@@ -190,16 +201,16 @@
         "wireplumber": {
             "scroll-step": 5,
             "format": "{icon}{volume}%",
-            "format-bluetooth": "{icon}{volume}% ",
-            "format-bluetooth-muted": "󰖁 {icon}",
-            "format-muted": "󰖁",
+            "format-bluetooth": "{icon}{volume}%  ",
+            "format-bluetooth-muted": "󰖁 {icon} ",
+            "format-muted": "󰖁 ",
             "format-icons": {
-                "headphone": "",
-                "hands-free": "󱡏",
-                "headset": "󰋎",
-                "phone": "",
-                "portable": "",
-                "car": "",
+                "headphone": " ",
+                "hands-free": "󱡏 ",
+                "headset": "󰋎 ",
+                "phone": " ",
+                "portable": "󰦢 ",
+                "car": " ",
                 "default": [
                     " :",
                     " :",
@@ -307,31 +318,25 @@
         "group/clock": {
             "orientation": "horizontal",
             "modules": [
-                "clock"
+                "custom/openbracket",
+                "clock",
+                "custom/closebracket"
             ]
         },
         "group/cava": {
             "orientation": "horizontal",
             "modules": [
                 "custom/cava"
-            ],
-            "exec-if": "command -v cava >/dev/null 2>&1"
+            ]
         },
-        // "custom/cava": {
-        //     "format": "[{}]",
-        //     "exec": "~/.config/waybar/scripts/cava_test.sh",
-        //     "interval": 2,
-        //     "exec-if": "command -v cava >/dev/null 2>&1",
-        //     "tooltip": false,
-        //     "max-length": 30
-        // },
         "custom/cava": {
             "format": "[{}]",
             "exec": "~/.config/waybar/scripts/cava_smart.sh",
             "return-type": "json",
-            // "interval": 2,
+            "interval": 2,
+            "exec-if": "command -v cava >/dev/null 2>&1",
             "tooltip": false,
-            "max-length": 25
+            "max-length": 30
         },
         "tray": {
             "icon-size": 14,

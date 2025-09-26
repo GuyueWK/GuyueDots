@@ -16,9 +16,10 @@
     font-family: "Iosevka Nerd Font";
     font-size: 15px;
 }
+
 #custom-openbracket,
-#custom-closebracket{
-    margin: 0 5px ;
+#custom-closebracket {
+    margin: 0 5px;
 }
 
 /* idk what all this does */
@@ -28,9 +29,11 @@ window#waybar {
     color: @text;
     transition: background-color 0.5s;
 }
+
 window#waybar.hidden {
     opacity: 0.2;
 }
+
 window#waybar.empty #window {
     background-color: transparent;
 }
@@ -44,6 +47,7 @@ window#waybar.empty #window {
     border: 2px solid @focused;
     border-radius: 5px;
 }
+
 .modules-center {
     margin: 10px 0 0 0;
     padding: 0 10px 0 10px;
@@ -51,6 +55,7 @@ window#waybar.empty #window {
     border: 2px solid @focused;
     border-radius: 5px;
 }
+
 .modules-right {
     margin: 10px 10px 0 0;
     padding: 0 10px 0 10px;
@@ -62,7 +67,7 @@ window#waybar.empty #window {
 
 /* whats this?? */
 button {
-  border: none;
+    border: none;
 }
 
 
@@ -71,18 +76,21 @@ button {
 /* menu pannel */
 #custom-arch,
 #custom-powerprofile,
-#custom-themeswitcher{
+#custom-themeswitcher {
     padding-right: 10px;
     padding-left: 5px;
     font-size: 15px;
     border-radius: 8px;
 }
+
 #custom-arch:hover {
     color: @color1;
 }
-#custom-powerprofile:hover{
+
+#custom-powerprofile:hover {
     color: @color1
 }
+
 #custom-themeswitcher:hover {
     color: @color1;
 }
@@ -94,41 +102,46 @@ button {
     color: @text;
     border-radius: 0;
 }
+
 #workspaces button:hover {
     background-color: @second-background;
 }
+
 #workspaces button.active {
     color: @focused2;
     background-color: @second-background;
 }
+
 #workspaces button.urgent {
     background-color: @urgent;
 }
 
 /* no idea what this does */
-.modules-left > widget:first-child > #workspaces {
+.modules-left>widget:first-child>#workspaces {
     margin-left: 0;
 }
-.modules-right > widget:last-child > #workspaces {
+
+.modules-right>widget:last-child>#workspaces {
     margin-right: 0;
 }
 
 /* media player */
 #mpris {
-    margin: 0 0 0 5px;
-    padding: 0 9px ;
+    /* margin: 0 0 0 5px;
+    padding: 0 9px; */
+    font-size: 15px;
     background-color: @background;
     color: @text;
 }
+
 #mpris.playing {
     background-color: @color3;
     border-radius: 2px;
     color: @background;
 }
 
-
 /* center module  */
-#window{
+#window {
     padding: 0 5px;
 }
 
@@ -142,8 +155,9 @@ button {
 #custom-clipboard,
 #custom-bluetooth,
 #network {
-  padding: 0 10px ;
+    padding: 0 10px;
 }
+
 #clock:hover,
 #battery:hover,
 #custom-cpu:hover,
@@ -153,56 +167,66 @@ button {
 #idle_inhibitor:hover,
 #custom-swaync:hover,
 #backlight:hover,
-#wireplumber:hover{
+#wireplumber:hover {
     color: @color1;
 }
-#idle_inhibitor{
-  padding: 0 10px 0 0;
+
+#idle_inhibitor {
+    padding: 0 10px 0 0;
 }
-#custom-powerprofile{
-  padding: 0 8px 0 4px;
+
+#custom-powerprofile {
+    padding: 0 8px 0 4px;
 }
+
 /* Remaining Modules */
 #backlight,
-#wireplumber{
+#wireplumber {
     padding: 0 5px;
 }
+
 #wireplumber.muted {
-  background-color: @color2;
+    background-color: @color2;
 }
+
 #custom-swaync {
     padding: 0 10px 0 5px;
-    font-size: 16px;       /* same scale as other icons */
+    font-size: 16px;
+    /* same scale as other icons */
     color: @text;
 }
+
 #battery.charging,
 #battery.plugged {
-  background-color: @focused2 ;
-  color: @background;
+    background-color: @focused2 ;
+    color: @background;
 }
+
 #battery.critical:not(.charging) {
-  background-color: @urgent;
-  color: @text;
-  animation: blink 0.5s steps(12) infinite alternate;
-}
-@keyframes blink {
-  to {
-    background-color: @second-background;
+    background-color: @urgent;
     color: @text;
-  }
+    animation: blink 0.5s steps(12) infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: @second-background;
+        color: @text;
+    }
 }
 
 /* Cava visualization styles */
 #custom-cava {
-    margin: 0 0 0 5px;
-    padding: 0 8px;
+    margin: 0 5px;
+    padding: 0 9px;
     background-color: @background;
     color: @color1;
     border-radius: 3px;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 12px;
+    /* font-family: "JetBrains Mono", monospace; */
+    font-size: 15px;
     transition: all 0.3s ease;
 }
+
 
 #custom-cava.cava-active {
     background-color: @color1;
@@ -218,10 +242,11 @@ button {
 }
 
 @keyframes pulse {
-  0% {
-    background-color: @color1;
-  }
-  100% {
-    background-color: @color2;
-  }
+    0% {
+        background-color: @color1;
+    }
+
+    100% {
+        background-color: @color2;
+    }
 }
