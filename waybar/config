@@ -6,7 +6,7 @@
         "group/Utilities",
         "group/workspaces",
         "mpris",
-        "custom/cava"
+        "group/cava"
     ],
     "modules-center": [
         "group/windows"
