@@ -68,7 +68,7 @@
         "orientation": "horizontal",
         "modules":[
             "custom/openbracket",
-            "niri/workspaces",
+            "hyprland/workspaces",
             "custom/closebracket"
         ]
     },
@@ -124,21 +124,21 @@
         "orientation":"horizontal",
         "modules":[
             "custom/openbracket",
-            "niri/window",
+            "hyprland/window",
             "custom/closebracket"
         ]
     },
     "hyprland/window": {
         "format": "{title}", 
         "max-length": 40,
-        "min-length": 20,
+        "min-length": 5,
         "all-outputs": true
     },
 
     "niri/window": {
         "format": "{title}", 
         "max-length": 40,
-        "min-length": 20,
+        "min-length": 5,
         "all-outputs": true
     },
 
