@@ -1,25 +1,30 @@
 @define-color background #3A372F;
 @define-color primary #BFAA80;
-@define-color button-border #D08B57; 
+@define-color button-border #D08B57;
 
 
 #lock {
-    background-image: url("/home/plagus/.config/wlogout/icons/lock.png");
+    background-image: url("/home/guyue/.config/wlogout/icons/lock.png");
 }
+
 #logout {
-    background-image: url("/home/plagus/.config/wlogout/icons/logout.png");
+    background-image: url("/home/guyue/.config/wlogout/icons/logout.png");
 }
+
 #suspend {
-    background-image: url("/home/plagus/.config/wlogout/icons/suspend.png");
+    background-image: url("/home/guyue/.config/wlogout/icons/suspend.png");
 }
+
 #hibernate {
-    background-image: url("/home/plagus/.config/wlogout/icons/hibernate.png");
+    background-image: url("/home/guyue/.config/wlogout/icons/hibernate.png");
 }
+
 #reboot {
-    background-image: url("/home/plagus/.config/wlogout/icons/reboot.png");
+    background-image: url("/home/guyue/.config/wlogout/icons/reboot.png");
 }
+
 #shutdown {
-    background-image: url("/home/plagus/.config/wlogout/icons/shutdown.png");
+    background-image: url("/home/guyue/.config/wlogout/icons/shutdown.png");
 }
 
 * {
@@ -49,10 +54,13 @@ button:focus {
 
 
 /* Individual button styling */
-#lock, #logout, #suspend, #hibernate, #shutdown, #reboot {
+#lock,
+#logout,
+#suspend,
+#hibernate,
+#shutdown,
+#reboot {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100px;
 }
-
-
