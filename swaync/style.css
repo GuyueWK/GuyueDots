@@ -4,26 +4,41 @@
 ======================================================================== */
 
 /* ========================================================================
-   COLOR PALETTE - Gruvbox Inspired
+   COLOR PALETTE - Catppuccin Mocha
 ======================================================================== */
-@define-color bg-primary #2C2A24;        /* Dark background - main canvas */
-@define-color bg-secondary #282828;      /* Secondary background - panels */
-@define-color bg-tertiary #3c3836;       /* Tertiary background - hover states */
-@define-color bg-selected #504945;       /* Selection background */
+@define-color bg-primary #1e1e2e;
+/* Dark background - main canvas */
+@define-color bg-secondary #313244;
+/* Secondary background - panels */
+@define-color bg-tertiary #45475a;
+/* Tertiary background - hover states */
+@define-color bg-selected #585b70;
+/* Selection background */
 
-@define-color fg-primary #ebdbb2;         /* Primary text - cream/off-white */
-@define-color fg-secondary #d5c4a1;      /* Secondary text - muted cream */
-@define-color fg-tertiary #bdae93;       /* Tertiary text - greyish cream */
-@define-color fg-disabled #665c54;       /* Disabled text - dark grey */
+@define-color fg-primary #cdd6f4;
+/* Primary text - light grey */
+@define-color fg-secondary #bac2de;
+/* Secondary text - muted grey */
+@define-color fg-tertiary #a6adc8;
+/* Tertiary text - darker grey */
+@define-color fg-disabled #6c7086;
+/* Disabled text - dark grey */
 
-@define-color accent-green #78997A;       /* Spotify green accent */
-@define-color accent-orange #D08B57;      /* Warm orange accent */
-@define-color accent-red #B05A5A;         /* Error/critical red */
-@define-color accent-blue #7699A3;        /* Info blue */
-@define-color accent-purple #8D7AAE;      /* Purple accent */
+@define-color accent-green #a6e3a1;
+/* Success green */
+@define-color accent-orange #fab387;
+/* Warm peach accent */
+@define-color accent-red #f38ba8;
+/* Error/critical red */
+@define-color accent-blue #89b4fa;
+/* Info blue */
+@define-color accent-purple #cba6f7;
+/* Purple accent */
 
-@define-color border-primary #504945;     /* Primary border color */
-@define-color border-focus #b8bb26;       /* Focus border - green accent */
+@define-color border-primary #585b70;
+/* Primary border color */
+@define-color border-focus #cba6f7;
+/* Focus border - purple accent */
 
 /* Special Purpose Colors */
 @define-color mpris-album-art-overlay rgba(0, 0, 0, 0.55);
@@ -46,7 +61,7 @@
 .control-center {
     background-color: @bg-primary;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.65);
-    border: 2px solid @accent-orange;
+    border: 2px solid @accent-purple;
     padding: 5px;
     border-radius: 4px;
 }
@@ -74,7 +89,7 @@
     margin: 8px 2px;
 }
 
-.notification > *:last-child > * {
+.notification>*:last-child>* {
     margin: 5px;
 }
 
@@ -98,13 +113,13 @@
 }
 
 /* Notification Actions */
-.notification-action > button {
+.notification-action>button {
     padding: unset;
     margin: unset;
     border-radius: 4px;
 }
 
-.notification-action > label {
+.notification-action>label {
     font-size: 1rem;
     font-weight: normal;
 }
@@ -190,11 +205,11 @@ tooltip {
 ======================================================================== */
 .widget-buttons-grid {
     font-size: 1rem;
-    padding: 20px 20px ;
+    padding: 20px 20px;
     margin: unset;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button {
+.widget-buttons-grid>flowbox>flowboxchild>button {
     background: @bg-tertiary;
     border: 1px solid @accent-green;
     box-shadow: 0px 0px 10px @bg-primary;
@@ -206,15 +221,15 @@ tooltip {
     transition: all .5s ease;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
     background: @bg-selected;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+.widget-buttons-grid>flowbox>flowboxchild>button.toggle:checked {
     background: @accent-green;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked:hover {
+.widget-buttons-grid>flowbox>flowboxchild>button.toggle:checked:hover {
     background: @accent-green;
 }
 
@@ -248,11 +263,11 @@ tooltip {
     color: @accent-purple;
 }
 
-.widget-mpris .widget-mpris-player > box > button:hover {
+.widget-mpris .widget-mpris-player>box>button:hover {
     background-color: @mpris-button-hover;
 }
 
-.widget-mpris > box > button:hover {
+.widget-mpris>box>button:hover {
     background: alpha(@bg-selected, 0.6);
 }
 
@@ -283,15 +298,17 @@ tooltip {
     font-size: 1.3rem;
 }
 
-.widget-volume > box > button {
+.widget-volume>box>button {
     border: none;
     background-color: #3A372F;
 }
-.widget-volume > box > button:hover {
+
+.widget-volume>box>button:hover {
     background-color: @accent-blue;
     color: @fg-primary;
 }
-.widget-volume > box > button:active {
+
+.widget-volume>box>button:active {
     background-color: @accent-blue;
 }
 
@@ -314,16 +331,18 @@ tooltip {
 ======================================================================== */
 
 /* DND text */
-.widget-dnd > label {
-    color: @accent-purple; /* Replace with your desired color */
+.widget-dnd>label {
+    color: @accent-purple;
+    /* Replace with your desired color */
 }
+
 .widget-dnd {
     font-weight: bold;
     margin: unset;
     padding: 20px 15px 15px 15px;
 }
 
-.widget-dnd > switch {
+.widget-dnd>switch {
     font-size: initial;
     border-radius: 4px;
     background: @bg-tertiary;
@@ -332,11 +351,11 @@ tooltip {
     padding: 3px;
 }
 
-.widget-dnd > switch:checked {
+.widget-dnd>switch:checked {
     background: @accent-purple;
 }
 
-.widget-dnd > switch slider {
+.widget-dnd>switch slider {
     background: @bg-primary;
     border-radius: 4px;
     min-width: 18px;
@@ -353,11 +372,11 @@ tooltip {
     padding: 15px;
 }
 
-.widget-title > label {
+.widget-title>label {
     font-size: 1.5rem;
 }
 
-.widget-title > button {
+.widget-title>button {
     padding: unset;
     margin: unset;
     text-shadow: none;
@@ -369,7 +388,7 @@ tooltip {
     transition: all .7s ease;
 }
 
-.widget-title > button:hover {
+.widget-title>button:hover {
     background: @accent-red;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.65);
 }
